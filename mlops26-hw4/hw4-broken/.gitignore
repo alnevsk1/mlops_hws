@@ -1,0 +1,9 @@
+__pycache__/
+.venv/
+# Данные и токенизированный датасет — артефакты стадии, не исходники
+data/
+# metrics/tokenize.json и docs/tokenize_report.md генерируются `make tokenize`,
+# но в git едут: это сдаваемые артефакты, и metrics (cache: false) нужен
+# в git для `dvc metrics diff`.
+# Логи самопроверки
+.check_*.log

@@ -1,0 +1,21 @@
+# ДЗ 2 и ДЗ 3 живут в своих репозиториях (alnevsk1/mlops_hw2, alnevsk1/mlops_hw3)
+/mlops_hw2/
+/mlops26-hw3/
+# ДЗ 1 — тоже свой репозиторий (alnevsk1/mlops_hw)
+/mlops_hw/
+
+# Материалы курса (условия и лекции) — как и в ДЗ 2/3, в git не кладём
+*.html
+
+__pycache__/
+.venv/
+.DS_Store
+*.bak
+*.orig
+~$*
+.claude/
+
+# Локальные заметки и инструкции для Claude — не коммитятся
+CLAUDE.md
+CLAUDE.local.md
+HOMEWORKS.md
