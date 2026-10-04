@@ -1,0 +1,75 @@
+# Единственная точка конфигурации ДЗ 5. В src/ нет ни имени модели,
+# ни learning rate, ни путей.
+model:
+  name: "Qwen/Qwen3-0.6B"
+  device: "auto"            # auto | cpu | cuda | mps
+  # Базовые веса в bfloat16: они заморожены, точность им не нужна, а память
+  # и время уходят вдвое. Сами матрицы LoRA peft держит в float32 — там идут
+  # крошечные обновления AdamW. На старом CPU без bf16 ставьте float32.
+  dtype: "bfloat16"
+  enable_thinking: false    # как в ДЗ 4: шаблон должен совпадать с обучением
+
+data:
+  # Выход стадии tokenize из ДЗ 4. У студента — свой путь.
+  train: "data/tokenized/train.pt"
+  val: "data/tokenized/val.pt"
+
+lora:
+  r: 8
+  alpha: 16                 # итоговый масштаб апдейта alpha / r = 2
+  dropout: 0.05
+  # Только проекции внимания и MLP. embed_tokens и lm_head — это 155 млн
+  # параметров каждый; в modules_to_save они уезжают в адаптер целиком.
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+train:
+  seed: 42
+  epochs: 1
+  # RTX 4060 — 8 ГБ. На batch_size 2 пример длиной до 768 токенов (ДЗ 4)
+  # доводил занятое до 7,8 ГБ, и драйвер Windows молча выносил остаток
+  # в общую RAM (sysmem fallback) — обучение замедлялось в разы без ошибки.
+  batch_size: 1
+  grad_accum: 8             # эффективный батч тот же = 8: память как у батча 1
+  # Было 1.0e-2: loss взлетал до десятков на первых шагах. 2e-4 — lr эталона
+  # из лекции для LoRA r=8, alpha=16 (масштаб поправки alpha/r = 2).
+  lr: 2.0e-4
+  warmup_ratio: 0.03
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  eval_every: 10            # шагов оптимизатора между замерами val loss
+  # Логиты на весь словарь: 2 примера x 512 токенов x 151 936 x 4 байта = 0,6 ГБ.
+  # Батч 8 на оценке — уже 2,5 ГБ одних логитов, и ноутбук уходит в своп.
+  eval_batch_size: 2
+  gradient_checkpointing: true   # без него на ноутбуке с 16–32 ГБ не влезает
+  max_steps: null           # null — по эпохам; число — обрезать (smoke-тесты)
+
+# Эксперимент по слоям: второй прогон без адаптеров на первых N слоях.
+variants:
+  - name: "all_layers"
+    freeze_first: 0
+  - name: "freeze14"
+    freeze_first: 14
+
+compare:
+  max_new_tokens: 40
+  # Пять коммитов из TEST-сплита ДЗ 3 (nestjs/nest) — в обучение не попадали.
+  # По одному на класс; верный ответ — в комментарии над промптом.
+  prompts:
+    # nestjs/nest@803fc2c471: {"type": "fix", "breaking": false}
+    - "serialize SSE retry field when value is zero\n\nTruthy checks omitted retry: 0, so clients never received an explicit zero reconnection delay. Use isNil like other MessageEvent fields.\n\nChanged files (2):\n- packages/core/router/sse-stream.ts | modified | +1 -1\n- packages/core/test/router/sse-stream.spec.ts | modified | +26 -0"
+    # nestjs/nest@da0d8d90cf: {"type": "docs", "breaking": false}
+    - "fix grammar 'does not supports' -> 'does not support' in node22 ESM sample\n\nChanged files (1):\n- sample/35-use-esm-package-after-node22/README.md | modified | +1 -1"
+    # nestjs/nest@a3a31b9643: {"type": "refactor", "breaking": false}
+    - "use Object.hasOwn\n\nCo-authored-by: Copilot App <[EMAIL]>\n\nChanged files (5):\n- integration/hello-world/e2e/interceptors.spec.ts | modified | +1 -1\n- packages/common/decorators/modules/module.decorator.ts | modified | +1 -1\n- packages/common/utils/shared.utils.ts | modified | +1 -1\n- packages/core/injector/module.ts | modified | +1 -1\n- packages/microservices/client/client-grpc.ts | modified | +1 -1"
+    # nestjs/nest@6e5b5a784c: {"type": "test", "breaking": false}
+    - "add override mimetype validation coverage\n\nChanged files (1):\n- packages/common/test/pipes/file/file-type.validator.spec.ts | modified | +16 -2"
+    # nestjs/nest@72857780bc: {"type": "chore", "breaking": false}
+    - "update multerExceptions constant\n\nChanged files (1):\n- packages/platform-express/multer/multer/multer.constants.ts | modified | +1 -0"
+  # Системный промпт — первый из collect.system_prompts ДЗ 3, как в обучении.
+  system: "You classify git commits by Conventional Commits type. Given the commit message (prefix removed) and the list of changed files, answer with a JSON object: {\"type\": one of feat|fix|docs|refactor|test|chore, \"breaking\": true or false}. Answer with JSON only."
+
+paths:
+  models: "models"
+  metrics: "metrics"
+  curves: "docs/curves.png"
+  compare: "docs/compare.md"

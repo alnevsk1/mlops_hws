@@ -1,0 +1,28 @@
+[project]
+name = "mlops-hw5"
+version = "0.1.0"
+description = "MLOPS-26, домашняя работа 5: первый LoRA-ран на своём датасете"
+requires-python = ">=3.12"
+# Нижние границы, точные версии фиксирует uv.lock.
+# peft>=0.14 — layers_to_transform и save_pretrained без лишних модулей.
+dependencies = [
+    "torch>=2.5",
+    "transformers>=4.51",
+    "peft>=0.14",
+    "numpy>=2.1",
+    "pyyaml>=6.0",
+    "matplotlib>=3.9",
+    "psutil>=5.9",
+]
+
+# PyPI-колёса torch под Windows собраны без CUDA; GPU-сборка — на индексе
+# PyTorch. Обучение здесь идёт на RTX 4060, как замеры памяти в ДЗ 2.
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu128", marker = "sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
