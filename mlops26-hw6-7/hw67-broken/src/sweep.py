@@ -5,7 +5,7 @@ from pathlib import Path
 
 import mlflow
 import pandas as pd
-from mlflow.models import infer_signature
+from mlflow.models import Model, infer_signature
 
 from src.common import connect, load_params, provenance, save_json
 from src.train import train
@@ -31,10 +31,22 @@ def run_candidate(params, candidate, versions):
         samples = {"prompt": params["generation"]["prompts"], "answer": answers}
         mlflow.log_table(samples, "samples.json")
         example = pd.DataFrame({"prompt": samples["prompt"][:1]})
-        mlflow.pyfunc.log_model(artifact_path="model", python_model="src/model.py",
+        # Не log_model, а save_model + log_artifacts (Windows, mlflow 2.22):
+        # 1) путь артефакта в MLmodel собирается через os.path.join -> "artifacts\\adapter",
+        #    по URL с обратным слешем сервер отдаёт HTTP 500;
+        # 2) log_model проверяет input_example, загружая всю модель на GPU, и она остаётся
+        #    в процессе — пик памяти следующих кандидатов завышался на размер базы.
+        # Загрузку из реестра в новом процессе проверяет tests/check.py (проверка 7).
+        local = Path(tmp) / "model"
+        mlflow.pyfunc.save_model(str(local), python_model="src/model.py",
             artifacts={"adapter": str(out)}, signature=infer_signature(example, answers[:1]),
             input_example=example,
             pip_requirements=["mlflow==2.22.2", "torch==2.14.0", "transformers==5.17.0", "peft==0.21.0", "pandas<3"])
+        mlmodel = Model.load(str(local / "MLmodel"))
+        for spec in mlmodel.flavors["python_function"]["artifacts"].values():
+            spec["path"] = Path(spec["path"]).as_posix()
+        mlmodel.save(str(local / "MLmodel"))
+        mlflow.log_artifacts(str(local), "model")
         return {"run_id": mlflow.active_run().info.run_id, "name": candidate["name"], **results}
 
 
