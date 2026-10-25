@@ -1,0 +1,362 @@
+[
+  {
+    "id": "nestjs/nest@9612c861ce",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.6559999999990396
+  },
+  {
+    "id": "nestjs/nest@7627546075",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 2.077999999997701
+  },
+  {
+    "id": "nestjs/nest@fcb3d7d3de",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 3.125
+  },
+  {
+    "id": "nestjs/nest@d7772cd10c",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 2.5790000000015425
+  },
+  {
+    "id": "nestjs/nest@97ae4c6a62",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.8430000000007567
+  },
+  {
+    "id": "nestjs/nest@4063cdb5d7",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.75
+  },
+  {
+    "id": "nestjs/nest@5e3dc4d0ab",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 2.2190000000009604
+  },
+  {
+    "id": "nestjs/nest@14b74ae705",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.5779999999977008
+  },
+  {
+    "id": "nestjs/nest@a8a3b55fcc",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 2.125
+  },
+  {
+    "id": "nestjs/nest@1c4d9c42dd",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 2.110000000000582
+  },
+  {
+    "id": "nestjs/nest@5de10dfb5d",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 1.889999999999418
+  },
+  {
+    "id": "nestjs/nest@363aacb6ae",
+    "raw": "{\"answer\": \"fix\"}",
+    "error": null,
+    "latency_seconds": 1.9220000000022992
+  },
+  {
+    "id": "nestjs/nest@1d1dbf7bd5",
+    "raw": "{\"answer\": \"fix\"}",
+    "error": null,
+    "latency_seconds": 1.7029999999977008
+  },
+  {
+    "id": "nestjs/nest@149229c1b4",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.7659999999996217
+  },
+  {
+    "id": "nestjs/nest@2ea28d0db9",
+    "raw": "{\"answer\": \"fix\"}",
+    "error": null,
+    "latency_seconds": 1.9690000000009604
+  },
+  {
+    "id": "nestjs/nest@73f28b2300",
+    "raw": "{\"answer\": \"fix\"}",
+    "error": null,
+    "latency_seconds": 1.5930000000007567
+  },
+  {
+    "id": "nestjs/nest@bc0fb5606f",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.735000000000582
+  },
+  {
+    "id": "nestjs/nest@c921a60ea1",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 2.077999999997701
+  },
+  {
+    "id": "nestjs/nest@a9bf20b693",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.7190000000009604
+  },
+  {
+    "id": "nestjs/nest@eb459f78e8",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 2.139999999999418
+  },
+  {
+    "id": "nestjs/nest@c5b71643e8",
+    "raw": "{\"answer\": \"fix\"}",
+    "error": null,
+    "latency_seconds": 1.735000000000582
+  },
+  {
+    "id": "nestjs/nest@7f4f0b8008",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 1.7809999999990396
+  },
+  {
+    "id": "nestjs/nest@da0d8d90cf",
+    "raw": "{\"answer\": \"fix\"}",
+    "error": null,
+    "latency_seconds": 1.9840000000003783
+  },
+  {
+    "id": "nestjs/nest@deed1b32ff",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.5309999999990396
+  },
+  {
+    "id": "nestjs/nest@8e03a7dee8",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 2.313000000001921
+  },
+  {
+    "id": "nestjs/nest@f5bf4ddeab",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.9530000000013388
+  },
+  {
+    "id": "nestjs/nest@6ed8970a04",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.5469999999986612
+  },
+  {
+    "id": "nestjs/nest@bcc0428072",
+    "raw": "{\"answer\": \"docs\"}",
+    "error": null,
+    "latency_seconds": 1.7190000000009604
+  },
+  {
+    "id": "nestjs/nest@46040b14f3",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.625
+  },
+  {
+    "id": "nestjs/nest@783d539898",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 2.0929999999971187
+  },
+  {
+    "id": "nestjs/nest@b763af1736",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 2.0160000000032596
+  },
+  {
+    "id": "nestjs/nest@d098bf9808",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 1.8909999999996217
+  },
+  {
+    "id": "nestjs/nest@8539f8747b",
+    "raw": "{\"answer\": \"fix\"}",
+    "error": null,
+    "latency_seconds": 1.7809999999990396
+  },
+  {
+    "id": "nestjs/nest@ed8d867983",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 1.9690000000009604
+  },
+  {
+    "id": "nestjs/nest@a3a31b9643",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 1.9679999999971187
+  },
+  {
+    "id": "nestjs/nest@0e3ec51574",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 2.2660000000032596
+  },
+  {
+    "id": "nestjs/nest@396cf81a9e",
+    "raw": "{\"answer\": \"REFUSE\"}",
+    "error": null,
+    "latency_seconds": 2.077999999997701
+  },
+  {
+    "id": "nestjs/nest@9a5d07b062",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.5780000000013388
+  },
+  {
+    "id": "nestjs/nest@58dc55905c",
+    "raw": "{\"answer\": \"test\"}",
+    "error": null,
+    "latency_seconds": 1.7969999999986612
+  },
+  {
+    "id": "nestjs/nest@b76c889e67",
+    "raw": "{\"answer\": \"test\"}",
+    "error": null,
+    "latency_seconds": 1.7030000000013388
+  },
+  {
+    "id": "nestjs/nest@fda0cf302f",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 2.2190000000009604
+  },
+  {
+    "id": "nestjs/nest@33ebcc9c2e",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 2.0939999999973224
+  },
+  {
+    "id": "nestjs/nest@1637abbe9b",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 1.8590000000003783
+  },
+  {
+    "id": "nestjs/nest@5a57222c0a",
+    "raw": "{\"answer\": \"test\"}",
+    "error": null,
+    "latency_seconds": 1.625
+  },
+  {
+    "id": "nestjs/nest@6e5b5a784c",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.8440000000009604
+  },
+  {
+    "id": "nestjs/nest@4edffd3345",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 2.0940000000009604
+  },
+  {
+    "id": "nestjs/nest@eb49dd188f",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.7969999999986612
+  },
+  {
+    "id": "nestjs/nest@7cea8cb296",
+    "raw": "{\"answer\": \"refuse\"}",
+    "error": null,
+    "latency_seconds": 1.9530000000013388
+  },
+  {
+    "id": "nestjs/nest@f76e96f9bd",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.5929999999971187
+  },
+  {
+    "id": "nestjs/nest@baddeafff2",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.735000000000582
+  },
+  {
+    "id": "nestjs/nest@3c25112b58",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.764999999999418
+  },
+  {
+    "id": "nestjs/nest@35a79dad34",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 2.25
+  },
+  {
+    "id": "nestjs/nest@7a06d07bfa",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 2.0
+  },
+  {
+    "id": "nestjs/nest@26e62a9bc3",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.6570000000028813
+  },
+  {
+    "id": "nestjs/nest@8f0d7bbf6d",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.764999999999418
+  },
+  {
+    "id": "nestjs/nest@e270ef54eb",
+    "raw": "{\"answer\": \"feat\"}",
+    "error": null,
+    "latency_seconds": 1.5319999999992433
+  },
+  {
+    "id": "nestjs/nest@816ef76dd9",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 2.437000000001717
+  },
+  {
+    "id": "behavior-format-redis-close",
+    "raw": "{\"answer\": \"fix\"}",
+    "error": null,
+    "latency_seconds": 1.8439999999973224
+  },
+  {
+    "id": "behavior-paraphrase-redis-close",
+    "raw": "{\"answer\": \"refactor\"}",
+    "error": null,
+    "latency_seconds": 1.9060000000026776
+  },
+  {
+    "id": "behavior-refusal-recipe",
+    "raw": "{\"answer\": \"REFUSE\"}",
+    "error": null,
+    "latency_seconds": 1.9379999999982829
+  }
+]

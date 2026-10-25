@@ -1,0 +1,21 @@
+{
+  "improved": [
+    "nestjs/nest@363aacb6ae",
+    "nestjs/nest@1d1dbf7bd5",
+    "nestjs/nest@2ea28d0db9",
+    "nestjs/nest@73f28b2300",
+    "nestjs/nest@c5b71643e8",
+    "nestjs/nest@bcc0428072",
+    "nestjs/nest@783d539898",
+    "nestjs/nest@b763af1736",
+    "nestjs/nest@d098bf9808",
+    "nestjs/nest@ed8d867983",
+    "nestjs/nest@a3a31b9643",
+    "nestjs/nest@58dc55905c",
+    "nestjs/nest@b76c889e67",
+    "nestjs/nest@5a57222c0a"
+  ],
+  "regressed": [
+    "nestjs/nest@7627546075"
+  ]
+}
