@@ -1,5 +1,6 @@
 """Один sweep — родительский run, каждый кандидат — отдельный дочерний run."""
 import json
+import os
 import tempfile
 from pathlib import Path
 
@@ -31,17 +32,26 @@ def run_candidate(params, candidate, versions):
         samples = {"prompt": params["generation"]["prompts"], "answer": answers}
         mlflow.log_table(samples, "samples.json")
         example = pd.DataFrame({"prompt": samples["prompt"][:1]})
-        # Не log_model, а save_model + log_artifacts (Windows, mlflow 2.22):
-        # 1) путь артефакта в MLmodel собирается через os.path.join -> "artifacts\\adapter",
-        #    по URL с обратным слешем сервер отдаёт HTTP 500;
-        # 2) log_model проверяет input_example, загружая всю модель на GPU, и она остаётся
-        #    в процессе — пик памяти следующих кандидатов завышался на размер базы.
-        # Загрузку из реестра в новом процессе проверяет tests/check.py (проверка 7).
+        # Не log_model, а save_model + log_artifacts: на Windows mlflow 2.22 собирает путь
+        # артефакта в MLmodel через os.path.join -> "artifacts\\adapter", по URL с обратным
+        # слешем сервер отдаёт HTTP 500. Путь ниже переводится в POSIX.
+        # save_model для PythonModel вызывает load_context (вывод сигнатуры), то есть грузит
+        # базу + адаптер, и экземпляр остаётся в глобальном set_model() до следующего
+        # кандидата: на cuda это +1,1 ГБ к пику всех кандидатов, кроме первого.
+        # Эту служебную копию грузим на CPU. Загрузку из реестра проверяет check.py (7).
         local = Path(tmp) / "model"
-        mlflow.pyfunc.save_model(str(local), python_model="src/model.py",
-            artifacts={"adapter": str(out)}, signature=infer_signature(example, answers[:1]),
-            input_example=example,
-            pip_requirements=["mlflow==2.22.2", "torch==2.14.0", "transformers==5.17.0", "peft==0.21.0", "pandas<3"])
+        previous = os.environ.get("HW6_DEVICE")
+        os.environ["HW6_DEVICE"] = "cpu"
+        try:
+            mlflow.pyfunc.save_model(str(local), python_model="src/model.py",
+                artifacts={"adapter": str(out)}, signature=infer_signature(example, answers[:1]),
+                input_example=example,
+                pip_requirements=["mlflow==2.22.2", "torch==2.14.0", "transformers==5.17.0", "peft==0.21.0", "pandas<3"])
+        finally:
+            if previous is None:
+                os.environ.pop("HW6_DEVICE")
+            else:
+                os.environ["HW6_DEVICE"] = previous
         mlmodel = Model.load(str(local / "MLmodel"))
         for spec in mlmodel.flavors["python_function"]["artifacts"].values():
             spec["path"] = Path(spec["path"]).as_posix()
