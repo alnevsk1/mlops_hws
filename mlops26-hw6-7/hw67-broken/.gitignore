@@ -1,8 +1,11 @@
 .venv/
 __pycache__/
-data/
+# Данные — под DVC; в git только *.dvc-указатели.
+/data/*
+!/data/*.dvc
+dvc_remote/
 models/
-metrics/
+# metrics/ — сдаваемые отчёты оценки (сырые ответы, eval, gate, storage-check): в git.
 mlruns/
 mlartifacts/
 *.log

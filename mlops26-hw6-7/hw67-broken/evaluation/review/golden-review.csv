@@ -1,0 +1,74 @@
+id,type,verdict,reason
+nestjs/nest@9612c861ce,feat,keep,новая возможность SSE (комментарии) + тест
+nestjs/nest@d956db4c10,feat,drop,неоднозначно: новое предупреждение можно считать и fix
+nestjs/nest@8e7a2ee7ba,feat,drop,неоднозначно: уточнение текста предупреждения ближе к fix
+nestjs/nest@7627546075,feat,keep,новый декоратор sse signal
+nestjs/nest@fcb3d7d3de,feat,keep,новая диагностика конфликтов маршрутов
+nestjs/nest@d7772cd10c,feat,keep,новый HTTP-метод QUERY
+nestjs/nest@6498f11a98,feat,drop,"неоднозначно: ""should finalize in every case"" читается как fix"
+nestjs/nest@3824f48b2f,feat,drop,метка утекает во вход: в теле squash-коммита есть feat(microservices)
+nestjs/nest@97ae4c6a62,feat,keep,новый gRPC exception filter
+nestjs/nest@4063cdb5d7,feat,keep,новый публичный getter транспорта
+nestjs/nest@5e3dc4d0ab,feat,keep,request-scoped gateways — новая возможность
+nestjs/nest@14b74ae705,feat,keep,новая возможность метаданных для tcp/redis
+nestjs/nest@361ce5fe0a,feat,drop,неоднозначно: сужение типов можно считать fix или refactor
+nestjs/nest@a8a3b55fcc,feat,keep,новая опция валидатора
+nestjs/nest@1c4d9c42dd,fix,keep,исправление normalizePath + тест
+nestjs/nest@5de10dfb5d,fix,keep,исправление снапшотов injector
+nestjs/nest@363aacb6ae,fix,keep,зависший promise Barrier
+nestjs/nest@1d1dbf7bd5,fix,keep,DiscoveryService пропускал провайдеры
+nestjs/nest@02ee6d444c,fix,drop,метка утекает во вход: в теле squash-коммита есть fix(common)
+nestjs/nest@149229c1b4,fix,keep,исправление слеша в fastify-адаптере + e2e
+nestjs/nest@2ea28d0db9,fix,keep,shutdown прерывался на отклонённом хуке
+nestjs/nest@a5bc6abd7d,fix,drop,сомнительная метка: автоматический коммит меняет только .github/dependabot.yml (по смыслу chore)
+nestjs/nest@73f28b2300,fix,keep,импорты lazy-модулей не сканировались
+nestjs/nest@bc0fb5606f,fix,keep,ParseUUIDPipe пропускал невалидные значения
+nestjs/nest@c921a60ea1,fix,keep,заголовки перезаписывались
+nestjs/nest@a9bf20b693,fix,keep,терялся errorCode в ответе
+nestjs/nest@eb459f78e8,fix,keep,middleware не срабатывал на исключённых маршрутах
+nestjs/nest@c5b71643e8,fix,keep,не вызывался teardown SSE
+nestjs/nest@7f4f0b8008,docs,keep,только CONTRIBUTING.md
+nestjs/nest@da0d8d90cf,docs,keep,"грамматика в README; слово ""fix"" в тексте — трудный случай"
+nestjs/nest@deed1b32ff,docs,keep,только JSDoc
+nestjs/nest@8e03a7dee8,docs,keep,раздел в Readme.md
+nestjs/nest@f5bf4ddeab,docs,keep,комментарий в коде
+nestjs/nest@6ed8970a04,docs,keep,только CONTRIBUTING.md
+nestjs/nest@bcc0428072,docs,keep,только CONTRIBUTING.md
+nestjs/nest@31a1e50306,docs,drop,метка утекает во вход: в теле squash-коммита есть docs(core,common)
+nestjs/nest@46040b14f3,docs,keep,только JSDoc
+nestjs/nest@783d539898,refactor,keep,вынесен общий хелпер
+nestjs/nest@b763af1736,refactor,keep,вынесена константа парсера
+nestjs/nest@d098bf9808,refactor,keep,вынесена общая утилита
+nestjs/nest@8539f8747b,refactor,keep,замена анти-паттерна async executor
+nestjs/nest@ed8d867983,refactor,keep,переименование; меняются только spec-файлы — трудный случай против test
+nestjs/nest@536eba5ef6,refactor,drop,неоднозначно: по описанию меняется поведение (аргумент передавался дважды) — ближе к fix
+nestjs/nest@a3a31b9643,refactor,keep,Object.hasOwn
+nestjs/nest@0e3ec51574,refactor,keep,замена non-null assertions
+nestjs/nest@396cf81a9e,refactor,keep,устранено дублирование вызова
+nestjs/nest@a566d456ee,test,drop,"неоднозначно: ""vitest merge follow-up"" ближе к chore"
+nestjs/nest@9a5d07b062,test,keep,только e2e spec
+nestjs/nest@58dc55905c,test,keep,новые unit-тесты
+nestjs/nest@b76c889e67,test,keep,новый интеграционный тест
+nestjs/nest@fda0cf302f,test,keep,только e2e spec
+nestjs/nest@33ebcc9c2e,test,keep,правка только spec-файла
+nestjs/nest@1637abbe9b,test,keep,только spec
+nestjs/nest@5a57222c0a,test,keep,новый unit-тест
+nestjs/nest@6e5b5a784c,test,keep,только spec
+nestjs/nest@4edffd3345,test,keep,e2e-тесты с фикстурами
+nestjs/nest@eb49dd188f,test,keep,новые unit-тесты
+nestjs/nest@a0b01390c1,chore,drop,неоднозначно: правка Readme.md пакетов ближе к docs
+nestjs/nest@7cea8cb296,chore,keep,скрипт в package.json
+nestjs/nest@72857780bc,chore,drop,неоднозначно: правка константы в исходниках
+nestjs/nest@f76e96f9bd,chore,keep,синхронизация lock-файла
+nestjs/nest@baddeafff2,chore,keep,новая dev-зависимость
+nestjs/nest@3c25112b58,chore,keep,peer-зависимости
+nestjs/nest@35a79dad34,chore,keep,обновление vitest
+nestjs/nest@74853594fe,chore,drop,"неоднозначно: ""cleanup"" без смысла"
+nestjs/nest@92bc05d959,chore,drop,неоднозначно: правка Readme.md пакетов ближе к docs
+nestjs/nest@d91b72cc95,chore,drop,"неоднозначно: ""fix merge regression"" в injector.ts ближе к fix"
+nestjs/nest@7a06d07bfa,chore,keep,eslint-директива
+nestjs/nest@b147e64e0c,chore,drop,неоднозначно: сужение типа ближе к refactor
+nestjs/nest@26e62a9bc3,chore,keep,bump зависимостей
+nestjs/nest@8f0d7bbf6d,chore,keep,CI workflow
+nestjs/nest@e270ef54eb,chore,keep,зависимости примеров
+nestjs/nest@816ef76dd9,chore,keep,package.json примеров

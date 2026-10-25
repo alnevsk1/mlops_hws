@@ -1,0 +1,20 @@
+stages:
+  # Golden/behavioral/training-index части B из сплитов ДЗ 3 v2 и ручного разбора.
+  eval_sets:
+    cmd: python scripts/build_eval_sets.py
+    deps:
+      - scripts/build_eval_sets.py
+      - evaluation/contract.py
+      - evaluation/review/golden-review.csv
+      - evaluation/review/behavioral.jsonl
+      - data/source
+      - data/tokenized/train.pt
+    params:
+      - eval_sets
+    outs:
+      - data/eval/golden.jsonl
+      - data/eval/behavioral.jsonl
+      - data/eval/training-index.jsonl
+    metrics:
+      - metrics/eval_sets.json:
+          cache: false

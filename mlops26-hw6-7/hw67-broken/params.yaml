@@ -36,8 +36,23 @@ registry:
   # Порог относительный к базе на ТОМ ЖЕ val; меньше loss — лучше.
   max_val_ratio: 1.0
 generation:
-  max_new_tokens: 16
-  system: "Выбери один правильный вариант. Ответь номером и текстом ответа."
+  # Ответ обучения {"type": ..., "breaking": ...} — 13-14 токенов (ДЗ 4); запас на обёртку базы.
+  max_new_tokens: 24
+  # Один из пяти system-промптов обучения (ДЗ 3), английский: ответ остаётся ASCII.
+  system: "You classify git commits by Conventional Commits type. Given the commit message (prefix removed) and the list of changed files, answer with a JSON object: {\"type\": one of feat|fix|docs|refactor|test|chore, \"breaking\": true or false}. Answer with JSON only."
+  # Два коммита из val (vuejs/core), не из test: test не участвует в выборе.
   prompts:
-    - "Метод подтверждения пневмонии: 0. общий анализ крови; 1. рентгенография грудной клетки; 2. спирометрия."
-    - "Показатель запасов железа: 0. сывороточное железо; 1. ферритин; 2. гемоглобин."
+    - "reject CR in attribute names (#15266)\n\nChanged files (2):\n- packages/server-renderer/__tests__/ssrRenderAttrs.spec.ts | modified | +11 -0\n- packages/shared/src/domAttrConfig.ts | modified | +1 -1"
+    - "add expect warn\n\nChanged files (1):\n- packages/server-renderer/__tests__/ssrRender.spec.ts | modified | +6 -0"
+# Сборка golden/behavioral/training-index (часть B, scripts/build_eval_sets.py, стадия eval_sets).
+eval_sets:
+  source_train: data/source/train.jsonl   # train ДЗ 3 v2 = вход tokenize ДЗ 4
+  source_test: data/source/test.jsonl     # test ДЗ 3 v2: nestjs/nest, в обучение не попадал
+  tokenized_train: data/tokenized/train.pt
+  review: evaluation/review/golden-review.csv
+  behavioral: evaluation/review/behavioral.jsonl
+  out_dir: data/eval
+  seed: 42
+  # Стратифицированно: редкие типы — все прошедшие ручной разбор, fix — частично.
+  per_type: {feat: 9, fix: 12, docs: 8, refactor: 8, test: 10, chore: 10}
+  choices: [feat, fix, docs, refactor, test, chore, REFUSE]

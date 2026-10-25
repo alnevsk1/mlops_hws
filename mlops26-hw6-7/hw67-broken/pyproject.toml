@@ -6,3 +6,19 @@ dependencies = [
   "mlflow==2.22.2", "torch==2.14.0", "transformers==5.17.0",
   "peft==0.21.0", "pyyaml>=6,<7", "psutil>=5.9,<8", "numpy>=2,<3", "SQLAlchemy==2.0.43",
 ]
+
+# DVC: golden/behavioral/training-index и их источник (часть B).
+[dependency-groups]
+dev = ["dvc>=3.50,<4"]
+
+# PyPI-колёса torch под Windows собраны без CUDA. torch==2.14.0 есть только на
+# индексе cu130 (на cu128 максимум 2.11.0); драйвер 621.01 поддерживает CUDA 13.
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu130", marker = "sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true

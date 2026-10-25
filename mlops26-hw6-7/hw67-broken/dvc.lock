@@ -1,0 +1,72 @@
+schema: '2.0'
+stages:
+  eval_sets:
+    cmd: python scripts/build_eval_sets.py
+    deps:
+    - path: data/source
+      hash: md5
+      md5: 634f56278e34485db40699f8d348da90.dir
+      size: 2424258
+      nfiles: 2
+    - path: data/tokenized/train.pt
+      hash: md5
+      md5: fc734ea3176d6339d2d32bf6dd61c899
+      size: 4975521
+    - path: evaluation/contract.py
+      hash: md5
+      md5: 6d83ad5e8bb53684534075d606f8e519
+      size: 3357
+    - path: evaluation/review/behavioral.jsonl
+      hash: md5
+      md5: ee3b96896cc1658245d0765a41583da8
+      size: 1781
+    - path: evaluation/review/golden-review.csv
+      hash: md5
+      md5: 0ddeb947da3f5376df34c7a3ff2b50ba
+      size: 6484
+    - path: scripts/build_eval_sets.py
+      hash: md5
+      md5: c1bcf0d848a92ef56c7bd90adf1ff645
+      size: 5455
+    params:
+      params.yaml:
+        eval_sets:
+          source_train: data/source/train.jsonl
+          source_test: data/source/test.jsonl
+          tokenized_train: data/tokenized/train.pt
+          review: evaluation/review/golden-review.csv
+          behavioral: evaluation/review/behavioral.jsonl
+          out_dir: data/eval
+          seed: 42
+          per_type:
+            feat: 9
+            fix: 12
+            docs: 8
+            refactor: 8
+            test: 10
+            chore: 10
+          choices:
+          - feat
+          - fix
+          - docs
+          - refactor
+          - test
+          - chore
+          - REFUSE
+    outs:
+    - path: data/eval/behavioral.jsonl
+      hash: md5
+      md5: 7dafc1d9eb27786b96e56e0c2ec4769f
+      size: 1784
+    - path: data/eval/golden.jsonl
+      hash: md5
+      md5: f9578c84b9066e1dc21f52ef6719a435
+      size: 51953
+    - path: data/eval/training-index.jsonl
+      hash: md5
+      md5: b09f069bda218f95ad67b9fbb7b8ee14
+      size: 1378063
+    - path: metrics/eval_sets.json
+      hash: md5
+      md5: 5157b77cbff960998d17c9fd679be8e9
+      size: 610

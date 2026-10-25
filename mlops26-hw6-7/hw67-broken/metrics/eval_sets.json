@@ -1,0 +1,31 @@
+{
+  "exact_or_group_intersections": 0,
+  "n_train_index": 1882,
+  "n_golden": 57,
+  "n_behavioral": 3,
+  "n_tensor_train": 1875,
+  "index_rows_not_in_tensor": 7,
+  "reviewed": 73,
+  "dropped_on_review": 16,
+  "per_type": {
+    "feat": 9,
+    "fix": 12,
+    "docs": 8,
+    "refactor": 8,
+    "test": 10,
+    "chore": 10
+  },
+  "slices": {
+    "multi-file": 35,
+    "not-fix": 45,
+    "single-file": 22,
+    "subject-only": 36,
+    "type-chore": 10,
+    "type-docs": 8,
+    "type-feat": 9,
+    "type-fix": 12,
+    "type-refactor": 8,
+    "type-test": 10,
+    "with-body": 21
+  }
+}
