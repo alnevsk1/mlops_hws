@@ -1,0 +1,14 @@
+04:21:46.474 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8122
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\.venv\Lib\site-packages\pydantic\_internal\_generate_schema.py:2350: UnsupportedFieldAttributeWarning: The 'deprecated' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'deprecated' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+04:21:56.555 | INFO    | Flow run 'dark-crow' - Beginning flow run 'dark-crow' for flow 'hw8910-release'
+04:21:56.594 | INFO    | Task run 'prepare_data-261' - Finished in state Cached(type=COMPLETED)
+04:21:56.600 | INFO    | Task run 'obtain_artifact-68c' - REUSED_TRAINING_RUN 73dd94f31fd1430198b96c928488bdfd
+04:21:56.604 | INFO    | Task run 'obtain_artifact-68c' - Finished in state Completed()
+04:21:56.622 | INFO    | Task run 'evaluate_gate-d99' - QUALITY_GATE passed=False reason=Регрессия критического среза type-feat: 8/9 < 9/9
+04:21:56.626 | INFO    | Task run 'evaluate_gate-d99' - Finished in state Completed()
+04:21:56.635 | INFO    | Task run 'publish_candidate-c00' - Finished in state Completed()
+04:21:57.586 | INFO    | Flow run 'dark-crow' - Finished in state Completed()
+{"flow_run_id": "27383956-b707-4620-88a0-d205cc70876b", "prepared": {"input_sha256": "706c146cb48b8b82f9fa53f8d284c7f46c62cd2b4d5fd745ec1911b5832b5614", "rows": 57, "max_tokens": 417, "cache_key": "604a5ffaf0b988e317045b5b5fccd764a2f07f23bee2ad74db8a978a74e63875"}, "status": "rejected", "reason": "Регрессия критического среза type-feat: 8/9 < 9/9"}
+04:21:57.652 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8122

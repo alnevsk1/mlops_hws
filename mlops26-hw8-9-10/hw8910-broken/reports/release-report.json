@@ -1,0 +1,30 @@
+{
+  "decision": null,
+  "evaluation_run_id": "ff70f00c527c4142abdfd5899beb7c71",
+  "golden_sha256": "e32cc874023578a07b961ce5030010b1e1ff19e3c92cb1b8c030ff097257bb5a",
+  "metrics": {
+    "accuracy": 0.40350877192982454,
+    "format_rate": 0.9824561403508771
+  },
+  "model_id": "73dd94f31fd1430198b96c928488bdfd",
+  "passed": false,
+  "protocol_sha256": "fc5c3fb3b67b9cf5b50eb39633b186cc0055683a29bf9e77fad8b76c1f520a22",
+  "reason": "Регрессия критического среза type-feat: 8/9 < 9/9",
+  "source_project": "mlops26-hw6-7/hw67-broken",
+  "sources": {
+    "baseline": {
+      "outputs_path": "metrics/baseline-outputs.json",
+      "outputs_sha256": "f0b84c472f560ba5e10bbec15aa0e330cc96a6219d7e1a78d17102bb705148b3",
+      "report_path": "metrics/baseline-eval.json",
+      "report_sha256": "3cbe082dcbb7cff1761aaec41c2a986ab04c7fafd4527ed26e0395c421bcc7ee"
+    },
+    "candidate": {
+      "outputs_path": "metrics/candidate-outputs.json",
+      "outputs_sha256": "745fb00cb7229a6b6d6bbe33a9514fcedf7101344ab5f32bc0ea4086df3a29d3",
+      "report_path": "metrics/candidate-eval.json",
+      "report_sha256": "1d46a34a5c6c98d63c31e5ac1685bb569b67319d047c669b00831c40b7b8fecd"
+    }
+  },
+  "status": "complete",
+  "synthetic": false
+}

@@ -1,0 +1,21 @@
+{
+  "input_id": "nestjs/nest@9612c861ce",
+  "ready": {
+    "ready": true
+  },
+  "calls_before": 1,
+  "calls_after": 1,
+  "invalid_status": 422,
+  "response": {
+    "answer": "{\"answer\": \"feat\"}",
+    "output_tokens": 7,
+    "model_id": "Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+    "runtime_sha256": "f9f5f5e173af8507a97263d5ff806e12c4b269e441f2e75504971e24b4e42937",
+    "request_id": "1a745938-9950-429c-b37d-7f7f7945a615",
+    "generation_seconds": 1.3915743999968981,
+    "total_seconds": 1.391714099998353
+  },
+  "health": {
+    "alive": true
+  }
+}

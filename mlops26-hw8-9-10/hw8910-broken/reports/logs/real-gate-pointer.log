@@ -1,0 +1,16 @@
+ACCEPTED_BEFORE=737e8786b78c13993cd1c550b2879fa52d5f93cae5027e66e2513b35347b7395
+04:06:57.295 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8576
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\.venv\Lib\site-packages\pydantic\_internal\_generate_schema.py:2350: UnsupportedFieldAttributeWarning: The 'deprecated' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'deprecated' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+04:07:10.729 | INFO    | Flow run 'stereotyped-myna' - Beginning flow run 'stereotyped-myna' for flow 'hw8910-release'
+04:07:11.875 | INFO    | Task run 'prepare_data-ec0' - PREPARED 706c146cb48b8b82f9fa53f8d284c7f46c62cd2b4d5fd745ec1911b5832b5614 rows=57 max_tokens=417
+04:07:11.996 | INFO    | Task run 'prepare_data-ec0' - Finished in state Completed()
+04:07:12.018 | INFO    | Task run 'obtain_artifact-b48' - Finished in state Completed()
+04:07:12.049 | INFO    | Task run 'evaluate_gate-4b8' - QUALITY_GATE passed=False reason=Регрессия критического среза type-feat: 8/9 < 9/9
+04:07:12.056 | INFO    | Task run 'evaluate_gate-4b8' - Finished in state Completed()
+04:07:12.078 | INFO    | Task run 'publish_candidate-762' - Finished in state Completed()
+04:07:12.869 | INFO    | Flow run 'stereotyped-myna' - Finished in state Completed()
+{"prepared": {"input_sha256": "706c146cb48b8b82f9fa53f8d284c7f46c62cd2b4d5fd745ec1911b5832b5614", "rows": 57, "max_tokens": 417, "cache_key": "2481790c5eae62577915f74a9b7bc35cc7fdb3404ec6006dcbd65aef07141544"}, "status": "rejected", "reason": "Регрессия критического среза type-feat: 8/9 < 9/9"}
+04:07:12.965 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8576
+ACCEPTED_AFTER=737e8786b78c13993cd1c550b2879fa52d5f93cae5027e66e2513b35347b7395 EXIT=0

@@ -1,0 +1,33 @@
+[project]
+name = "mlops-hw8910"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi>=0.115,<0.116",
+  "uvicorn>=0.34,<1",
+  "prefect>=3.4,<4",
+  "pyyaml>=6,<7",
+]
+
+[project.optional-dependencies]
+real = [
+  "mlflow==2.22.2",
+  "torch==2.14.0",
+  "transformers==5.17.0",
+  "peft==0.21.0",
+  "pyyaml>=6,<7",
+  "numpy>=2,<3",
+  "psutil>=5.9,<8",
+  "sqlalchemy==2.0.43",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.13,<1"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu130", marker = "sys_platform == 'win32'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true

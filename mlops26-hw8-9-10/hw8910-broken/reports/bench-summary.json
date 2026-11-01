@@ -1,0 +1,22 @@
+[
+  {
+    "concurrency": 1,
+    "n": 8,
+    "successes": 8,
+    "errors": 0,
+    "batch_seconds": 11.913727999999537,
+    "successful_requests_per_second": 0.6714942627530451,
+    "mean_client_seconds": 1.4884404999993421,
+    "max_client_seconds": 1.8363584999970044
+  },
+  {
+    "concurrency": 2,
+    "n": 8,
+    "successes": 8,
+    "errors": 0,
+    "batch_seconds": 12.442968600000313,
+    "successful_requests_per_second": 0.6429333913130504,
+    "mean_client_seconds": 2.948013575000914,
+    "max_client_seconds": 3.88600380000571
+  }
+]

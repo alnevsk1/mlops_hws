@@ -1,0 +1,92 @@
+test_incomplete_rejected_and_foreign_report_rejected (test_integration.ReleaseIntegrationTests.test_incomplete_rejected_and_foreign_report_rejected) ... FAIL
+test_invalid_requests_never_call_backend (test_integration.ReleaseIntegrationTests.test_invalid_requests_never_call_backend) ...
+  test_invalid_requests_never_call_backend (test_integration.ReleaseIntegrationTests.test_invalid_requests_never_call_backend) (payload={'prompt': ''}) ... FAIL
+  test_invalid_requests_never_call_backend (test_integration.ReleaseIntegrationTests.test_invalid_requests_never_call_backend) (payload={'prompt': 'x', 'max_new_tokens': 0}) ... FAIL
+  test_invalid_requests_never_call_backend (test_integration.ReleaseIntegrationTests.test_invalid_requests_never_call_backend) (payload={'prompt': 'x', 'max_new_tokens': 100000}) ... FAIL
+  test_invalid_requests_never_call_backend (test_integration.ReleaseIntegrationTests.test_invalid_requests_never_call_backend) (payload={'prompt': 'x', 'max_new_tokens': '4'}) ... FAIL
+test_loaded_version_survives_pointer_change_and_rollback (test_integration.ReleaseIntegrationTests.test_loaded_version_survives_pointer_change_and_rollback) ... FAIL
+test_recovery_and_content_cache_in_new_process (test_integration.ReleaseIntegrationTests.test_recovery_and_content_cache_in_new_process) ... FAIL
+test_rejected_report_and_repeated_publication (test_integration.ReleaseIntegrationTests.test_rejected_report_and_repeated_publication) ... FAIL
+test_warmup_blocks_ready_and_generate (test_integration.ReleaseIntegrationTests.test_warmup_blocks_ready_and_generate) ... FAIL
+
+======================================================================
+FAIL: test_incomplete_rejected_and_foreign_report_rejected (test_integration.ReleaseIntegrationTests.test_incomplete_rejected_and_foreign_report_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\tests\test_integration.py", line 106, in test_incomplete_rejected_and_foreign_report_rejected
+    self.assertNotEqual(incomplete.returncode, 0)
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_invalid_requests_never_call_backend (test_integration.ReleaseIntegrationTests.test_invalid_requests_never_call_backend) (payload={'prompt': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\tests\test_integration.py", line 159, in test_invalid_requests_never_call_backend
+    self.assertTrue(400 <= status < 500)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_invalid_requests_never_call_backend (test_integration.ReleaseIntegrationTests.test_invalid_requests_never_call_backend) (payload={'prompt': 'x', 'max_new_tokens': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\tests\test_integration.py", line 159, in test_invalid_requests_never_call_backend
+    self.assertTrue(400 <= status < 500)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_invalid_requests_never_call_backend (test_integration.ReleaseIntegrationTests.test_invalid_requests_never_call_backend) (payload={'prompt': 'x', 'max_new_tokens': 100000})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\tests\test_integration.py", line 159, in test_invalid_requests_never_call_backend
+    self.assertTrue(400 <= status < 500)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_invalid_requests_never_call_backend (test_integration.ReleaseIntegrationTests.test_invalid_requests_never_call_backend) (payload={'prompt': 'x', 'max_new_tokens': '4'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\tests\test_integration.py", line 159, in test_invalid_requests_never_call_backend
+    self.assertTrue(400 <= status < 500)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_loaded_version_survives_pointer_change_and_rollback (test_integration.ReleaseIntegrationTests.test_loaded_version_survives_pointer_change_and_rollback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\tests\test_integration.py", line 141, in test_loaded_version_survives_pointer_change_and_rollback
+    self.assertEqual(still_old["model_id"], "fixture-A")
+AssertionError: 'fixture-B' != 'fixture-A'
+- fixture-B
+?         ^
++ fixture-A
+?         ^
+
+
+======================================================================
+FAIL: test_recovery_and_content_cache_in_new_process (test_integration.ReleaseIntegrationTests.test_recovery_and_content_cache_in_new_process)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\tests\test_integration.py", line 96, in test_recovery_and_content_cache_in_new_process
+    self.assertIn("PREPARED", changed.stdout)
+AssertionError: 'PREPARED' not found in 'CACHE_HIT 227e52c31e3879b4e574d0ad9a225877aa90a0064c5acb021f7f4e43783a1e07\nPUBLISHED fixture-B\n'
+
+======================================================================
+FAIL: test_rejected_report_and_repeated_publication (test_integration.ReleaseIntegrationTests.test_rejected_report_and_repeated_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\tests\test_integration.py", line 122, in test_rejected_report_and_repeated_publication
+    self.assertEqual(len(events), 1)
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_warmup_blocks_ready_and_generate (test_integration.ReleaseIntegrationTests.test_warmup_blocks_ready_and_generate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\tests\test_integration.py", line 127, in test_warmup_blocks_ready_and_generate
+    self.assertEqual(request(port, "GET", "/ready")[0], 503)
+AssertionError: 200 != 503
+
+----------------------------------------------------------------------
+Ran 6 tests in 8.303s
+
+FAILED (failures=9)

@@ -1,0 +1,20 @@
+name: Fast release checks (template, not activated)
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          python-version: '3.12'
+      - run: uv sync --locked
+        working-directory: mlops26-hw8-9-10/hw8910-broken
+      - run: uv run --no-sync python -m compileall -q release.py lab.py service.py real_backend.py baseline.py candidate_manifest.py flow.py benchmark.py tests
+        working-directory: mlops26-hw8-9-10/hw8910-broken
+      - run: uv run --no-sync python -m unittest discover -s tests -v
+        working-directory: mlops26-hw8-9-10/hw8910-broken
+        env:
+          PYTHONIOENCODING: utf-8
