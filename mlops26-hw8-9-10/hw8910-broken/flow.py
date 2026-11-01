@@ -11,6 +11,7 @@ from pathlib import Path
 os.environ["PREFECT_HOME"] = str(Path(__file__).resolve().parent / ".prefect")
 os.environ["PREFECT_SERVER_ANALYTICS_ENABLED"] = "false"
 from prefect import flow, task
+from prefect.context import get_run_context
 from prefect.logging import get_run_logger
 
 from release import atomic_write, cache_key, file_sha256, publish_once, sha256
@@ -275,7 +276,11 @@ def release_flow(
     artifact = obtain_artifact(workspace, mode, previous_project)
     report = evaluate_gate(artifact, workspace, mode, critical_slices)
     outcome = publish_candidate(artifact, report, workspace, mode, fail_after_pointer)
-    return {"prepared": prepared, **outcome}
+    return {
+        "flow_run_id": str(get_run_context().flow_run.id),
+        "prepared": prepared,
+        **outcome,
+    }
 
 
 def main() -> None:

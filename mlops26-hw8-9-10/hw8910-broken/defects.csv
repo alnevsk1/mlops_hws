@@ -1,8 +1,8 @@
 id,symptom,reproduce,expected,observed,root_cause,fix_commit,regression_test,before_log,after_log
-1,,,,,,,,,
-2,,,,,,,,,
-3,,,,,,,,,
-4,,,,,,,,,
-5,,,,,,,,,
-6,,,,,,,,,
-7,,,,,,,,,
+1,"Устаревшая подготовка после изменения входа или config","uv run --no-sync python -m unittest discover -s tests -p test_integration.py -v","Новый ключ и PREPARED при изменении байтов или настроек","CACHE_HIT по старому пути","cache_key хешировал только строку пути; байты и config не участвовали",a101453,"test_recovery_and_content_cache_in_new_process","reports/logs/integration-before.log","reports/logs/fast-green.log"
+2,"Неполный или чужой отчёт выпускал B","uv run --no-sync python -m unittest discover -s tests -p test_release.py -v","Только complete и boolean PASS с совпадающими хешами","Строка false была truthy и проходила","validate_release проверял только истинность passed",a101453,"test_incomplete_rejected_and_foreign_report_rejected","reports/logs/integration-before.log","reports/logs/fast-green.log"
+3,"Ошибка записи могла повредить accepted.json","uv run --no-sync python -m unittest discover -s tests -p test_release.py -v","Предыдущие байты сохраняются при отказе замены","Прямая запись обходила os.replace и mock ошибки","publish использовал Path.write_text сразу по целевому пути",a101453,"test_failed_atomic_replace_preserves_previous_bytes","reports/logs/contracts-before.log","reports/logs/fast-green.log"
+4,"Повтор B создавал дубли событий публикации","uv run --no-sync python -m unittest discover -s tests -p test_integration.py -v","Один release_id и одно событие после повтора или восстановления","Две одинаковые строки в publications.jsonl","lab без проверки безусловно добавлял запись; не было восстановления после сбоя между указателем и журналом",a101453,"test_rejected_report_and_repeated_publication; test_pointer_crash_reconciles_one_event","reports/logs/integration-before.log","reports/logs/fast-green.log"
+5,"Ready был зелёным во время прогрева","uv run --no-sync python -m unittest discover -s tests -p test_integration.py -v","Ready 503 и generate 503 до конца warmup","Ready 200 и генерация работала сразу","ServiceState.ready выставлялся True до завершения warmup",a101453,"test_warmup_blocks_ready_and_generate","reports/logs/integration-before.log","reports/logs/fast-green.log"
+6,"API сообщал B при загруженной A","uv run --no-sync python -m unittest discover -s tests -p test_integration.py -v","До перезапуска ответ и metadata A; после перезапуска B","generate перечитывал accepted.json и рекламировал B","Метаданные ответа брались из файлового указателя вместо загруженного manifest",a101453,"test_loaded_version_survives_pointer_change_and_rollback","reports/logs/integration-before.log","reports/logs/fast-green.log"
+7,"Пустой prompt и неверный лимит вызывали backend","uv run --no-sync python -m unittest discover -s tests -p test_integration.py -v","4xx до генерации и неизменный debug.calls","HTTP 200 и число вызовов росло","do_POST передавал JSON в backend без проверки формы и диапазона",a101453,"test_invalid_requests_never_call_backend","reports/logs/integration-before.log","reports/logs/fast-green.log"

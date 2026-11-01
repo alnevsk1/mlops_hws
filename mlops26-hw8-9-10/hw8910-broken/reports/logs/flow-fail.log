@@ -1,10 +1,11 @@
-03:59:54.547 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8982
+04:18:10.967 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8134
 See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
 C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\.venv\Lib\site-packages\pydantic\_internal\_generate_schema.py:2350: UnsupportedFieldAttributeWarning: The 'deprecated' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'deprecated' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
-04:00:07.040 | INFO    | Flow run 'industrious-tamarin' - Beginning flow run 'industrious-tamarin' for flow 'hw8910-release'
-04:00:07.113 | INFO    | Task run 'prepare_data-08e' - Finished in state Cached(type=COMPLETED)
-04:00:08.103 | ERROR   | Flow run 'industrious-tamarin' - Encountered exception during execution: RuntimeError('Инъекция сбоя после подготовки')
+04:18:22.571 | INFO    | Flow run 'purring-ibex' - Beginning flow run 'purring-ibex' for flow 'hw8910-release'
+04:18:22.642 | INFO    | Task run 'prepare_data-309' - PREPARED 19b8b0a21157bd3e44e7afd00735c6fd9cdf05ee7f668a5013f5c9f1ff16c1ac rows=2 max_tokens=0
+04:18:22.653 | INFO    | Task run 'prepare_data-309' - Finished in state Completed()
+04:18:23.639 | ERROR   | Flow run 'purring-ibex' - Encountered exception during execution: RuntimeError('Инъекция сбоя после подготовки')
 Traceback (most recent call last):
   File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\.venv\Lib\site-packages\prefect\flow_engine.py", line 1287, in run_context
     yield self
@@ -16,14 +17,14 @@ Traceback (most recent call last):
   File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\.venv\Lib\site-packages\prefect\utilities\callables\__init__.py", line 348, in call_with_parameters
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\flow.py", line 173, in release_flow
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\flow.py", line 274, in release_flow
     raise RuntimeError("Инъекция сбоя после подготовки")
 RuntimeError: Инъекция сбоя после подготовки
-04:00:08.181 | INFO    | Flow run 'industrious-tamarin' - Finished in state Failed('Flow run encountered an exception: RuntimeError: Инъекция сбоя после подготовки')
+04:18:23.699 | INFO    | Flow run 'purring-ibex' - Finished in state Failed('Flow run encountered an exception: RuntimeError: Инъекция сбоя после подготовки')
 Traceback (most recent call last):
-  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\flow.py", line 210, in <module>
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\flow.py", line 345, in <module>
     main()
-  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\flow.py", line 202, in main
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\flow.py", line 331, in main
     result = release_flow(
              ^^^^^^^^^^^^^
   File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\.venv\Lib\site-packages\prefect\flows.py", line 1882, in __call__
@@ -47,7 +48,7 @@ Traceback (most recent call last):
   File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\.venv\Lib\site-packages\prefect\utilities\callables\__init__.py", line 348, in call_with_parameters
     return fn(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\flow.py", line 173, in release_flow
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\flow.py", line 274, in release_flow
     raise RuntimeError("Инъекция сбоя после подготовки")
 RuntimeError: Инъекция сбоя после подготовки
-04:00:08.296 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8982
+04:18:23.727 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8134
