@@ -1,0 +1,12 @@
+04:00:33.130 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8967
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\.venv\Lib\site-packages\pydantic\_internal\_generate_schema.py:2350: UnsupportedFieldAttributeWarning: The 'deprecated' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'deprecated' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+04:00:44.776 | INFO    | Flow run 'olive-trout' - Beginning flow run 'olive-trout' for flow 'hw8910-release'
+04:00:44.925 | INFO    | Task run 'prepare_data-178' - Finished in state Cached(type=COMPLETED)
+04:00:44.933 | INFO    | Task run 'obtain_artifact-54a' - Finished in state Completed()
+04:00:44.984 | INFO    | Task run 'evaluate_gate-f45' - Finished in state Completed()
+04:00:45.003 | INFO    | Task run 'publish_candidate-f4d' - Finished in state Completed()
+04:00:45.905 | INFO    | Flow run 'olive-trout' - Finished in state Completed()
+{"prepared": {"input_sha256": "19b8b0a21157bd3e44e7afd00735c6fd9cdf05ee7f668a5013f5c9f1ff16c1ac", "rows": 2, "max_tokens": 0, "cache_key": "0dd09272a795557fa06139596d9ec23c3530c4da8794eb97d4d6ee3620ba62e8"}, "status": "published", "release_id": "17bb331365821cf6d3ef8dec0298fd5f80f5cdbcf90f0a57ba9e239763e510ad"}
+04:00:45.927 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8967

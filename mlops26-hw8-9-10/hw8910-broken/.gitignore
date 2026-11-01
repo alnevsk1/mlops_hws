@@ -8,3 +8,7 @@ models/
 *.bin
 *.pt
 .lab*/
+reports/tmp/
+*.db
+.prefect/
+reports/logs/real-service*

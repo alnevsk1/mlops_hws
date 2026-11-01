@@ -1,0 +1,10 @@
+previous_project: ../../mlops26-hw6-7/hw67-broken
+prepare:
+  max_length: 768
+  code_revision: prepare-v2
+evaluation:
+  golden: data/eval/golden.jsonl
+  critical_slices: [not-fix, type-feat]
+api:
+  max_prompt_chars: 4096
+  max_concurrency: 1

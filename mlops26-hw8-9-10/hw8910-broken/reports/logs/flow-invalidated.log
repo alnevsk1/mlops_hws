@@ -1,0 +1,13 @@
+04:08:01.670 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8731
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\.venv\Lib\site-packages\pydantic\_internal\_generate_schema.py:2350: UnsupportedFieldAttributeWarning: The 'deprecated' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'deprecated' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+04:08:13.650 | INFO    | Flow run 'mature-mongoose' - Beginning flow run 'mature-mongoose' for flow 'hw8910-release'
+04:08:13.706 | INFO    | Task run 'prepare_data-c47' - PREPARED 6d0c5e9380bdfbc4f700e7b409027e11e609b5cee3c7ec43fac93967a2c6f72d rows=2 max_tokens=0
+04:08:13.713 | INFO    | Task run 'prepare_data-c47' - Finished in state Completed()
+04:08:13.723 | INFO    | Task run 'obtain_artifact-de0' - Finished in state Completed()
+04:08:13.760 | INFO    | Task run 'evaluate_gate-50d' - Finished in state Completed()
+04:08:13.775 | INFO    | Task run 'publish_candidate-b29' - Finished in state Completed()
+04:08:14.703 | INFO    | Flow run 'mature-mongoose' - Finished in state Completed()
+{"prepared": {"input_sha256": "6d0c5e9380bdfbc4f700e7b409027e11e609b5cee3c7ec43fac93967a2c6f72d", "rows": 2, "max_tokens": 0, "cache_key": "997c00c7f26784febe6269b08576f65c5a8dd849e9f841232706467b00f5231a"}, "status": "already-published", "release_id": "17bb331365821cf6d3ef8dec0298fd5f80f5cdbcf90f0a57ba9e239763e510ad"}
+04:08:14.728 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8731

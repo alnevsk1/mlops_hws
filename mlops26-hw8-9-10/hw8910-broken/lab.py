@@ -6,6 +6,7 @@
 import argparse
 import hashlib
 import json
+import uuid
 from pathlib import Path
 import release
 
@@ -19,11 +20,11 @@ def digest(data):
 
 
 def read(path):
-    return json.loads(Path(path).read_text())
+    return json.loads(Path(path).read_text(encoding='utf-8'))
 
 
 def write(path,value):
-    Path(path).write_text(json.dumps(value,ensure_ascii=False,indent=2))
+    Path(path).write_text(json.dumps(value,ensure_ascii=False,indent=2),encoding='utf-8')
 
 
 def initialize(root):
@@ -33,7 +34,7 @@ def initialize(root):
     runtime={'base_revision':'fixture-only','tokenizer_sha256':'a'*64,
              'template_sha256':'b'*64,'generation':{'max_new_tokens':32,'do_sample':False},'dtype':'float32'}
     for version in ['A','B']:
-        artifact=root/f'model-{version}.txt';artifact.write_text(f'STUB ONLY — version {version}\n')
+        artifact=root/f'model-{version}.txt';artifact.write_text(f'STUB ONLY — version {version}\n',encoding='utf-8')
         files={artifact.name:digest(artifact.read_bytes())}
         m={'schema_version':1,'model_id':f'fixture-{version}',
            'artifact_uri':artifact.name,'model_sha256':digest(canonical(files)),
@@ -48,7 +49,7 @@ def initialize(root):
     report=read(root/'report-B.json');report['passed']=False
     write(root/'report-reject.json',report)
     write(root/'config.json',{'tokenizer_revision':'r1','template_sha256':'b'*64,'max_length':128,'code_revision':'prepare-v1'})
-    (root/'input.txt').write_text('Первый пример\nВторой пример\n')
+    (root/'input.txt').write_text('Первый пример\nВторой пример\n',encoding='utf-8')
     print('Создан синтетический стенд:',root)
 
 
@@ -62,23 +63,30 @@ def prepare(root):
     write(entry,result);print('PREPARED',result['input_sha256']);return result
 
 
-def run(root,report_name,fail_after_prepare=False):
-    prepared=prepare(root)
-    if fail_after_prepare:raise RuntimeError('Инъекция сбоя после подготовки')
-    manifest=read(root/'manifest-B.json');report=read(root/report_name)
-    release.publish(manifest,report,root/'accepted.json')
-    with (root/'publications.jsonl').open('a') as f:
-        f.write(json.dumps({'model_id':manifest['model_id'],'prepared':prepared['input_sha256']})+'\n')
-    print('PUBLISHED',manifest['model_id'])
+def run(root,report_name,fail_after_prepare=False,fail_after_publish=False):
+    attempt_id=str(uuid.uuid4())
+    try:
+        prepared=prepare(root)
+        if fail_after_prepare:raise RuntimeError('Инъекция сбоя после подготовки')
+        manifest=read(root/'manifest-B.json');report=read(root/report_name)
+        rid,created=release.publish_once(manifest,report,root,root,fail_after_publish)
+        print('PUBLISHED' if created else 'ALREADY_PUBLISHED',manifest['model_id'],rid)
+    except Exception as exc:
+        with (root/'attempts.jsonl').open('a',encoding='utf-8') as f:
+            f.write(json.dumps({'attempt_id':attempt_id,'status':'failed','error':str(exc)},ensure_ascii=False)+'\n')
+        raise
+    else:
+        with (root/'attempts.jsonl').open('a',encoding='utf-8') as f:
+            f.write(json.dumps({'attempt_id':attempt_id,'status':'complete','release_id':rid},ensure_ascii=False)+'\n')
 
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--workspace',type=Path,default=Path('.lab'))
     sub=parser.add_subparsers(dest='command',required=True);sub.add_parser('init')
-    run_parser=sub.add_parser('run');run_parser.add_argument('--report',default='report-B.json');run_parser.add_argument('--fail-after-prepare',action='store_true')
+    run_parser=sub.add_parser('run');run_parser.add_argument('--report',default='report-B.json');run_parser.add_argument('--fail-after-prepare',action='store_true');run_parser.add_argument('--fail-after-publish',action='store_true')
     args=parser.parse_args()
     if args.command=='init':initialize(args.workspace)
-    else:run(args.workspace,args.report,args.fail_after_prepare)
+    else:run(args.workspace,args.report,args.fail_after_prepare,args.fail_after_publish)
 
 
 if __name__=='__main__':main()

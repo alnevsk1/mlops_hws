@@ -1,0 +1,15 @@
+04:14:21.926 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8108
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw8-9-10\hw8910-broken\.venv\Lib\site-packages\pydantic\_internal\_generate_schema.py:2350: UnsupportedFieldAttributeWarning: The 'deprecated' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'deprecated' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+04:14:32.518 | INFO    | Flow run 'curly-ara' - Beginning flow run 'curly-ara' for flow 'hw8910-release'
+04:14:33.599 | INFO    | Task run 'prepare_data-0f5' - PREPARED 706c146cb48b8b82f9fa53f8d284c7f46c62cd2b4d5fd745ec1911b5832b5614 rows=57 max_tokens=417
+04:14:33.669 | INFO    | Task run 'prepare_data-0f5' - Finished in state Completed()
+04:14:33.682 | INFO    | Task run 'obtain_artifact-026' - REUSED_TRAINING_RUN 73dd94f31fd1430198b96c928488bdfd
+04:14:33.691 | INFO    | Task run 'obtain_artifact-026' - Finished in state Completed()
+04:14:33.747 | INFO    | Task run 'evaluate_gate-c01' - QUALITY_GATE passed=False reason=Регрессия критического среза type-feat: 8/9 < 9/9
+04:14:33.754 | INFO    | Task run 'evaluate_gate-c01' - Finished in state Completed()
+04:14:33.766 | INFO    | Task run 'publish_candidate-cd5' - Finished in state Completed()
+04:14:34.590 | INFO    | Flow run 'curly-ara' - Finished in state Completed()
+{"prepared": {"input_sha256": "706c146cb48b8b82f9fa53f8d284c7f46c62cd2b4d5fd745ec1911b5832b5614", "rows": 57, "max_tokens": 417, "cache_key": "604a5ffaf0b988e317045b5b5fccd764a2f07f23bee2ad74db8a978a74e63875"}, "status": "rejected", "reason": "Регрессия критического среза type-feat: 8/9 < 9/9"}
+04:14:34.657 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8108
