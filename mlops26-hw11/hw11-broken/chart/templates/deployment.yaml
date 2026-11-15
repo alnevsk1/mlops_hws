@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-api
+spec:
+  {{- if not .Values.hpa.enabled }}
+  replicas: {{ .Values.replicas }}
+  {{- end }}
+  revisionHistoryLimit: 4
+  progressDeadlineSeconds: 180
+  strategy:
+    rollingUpdate: {maxSurge: 1, maxUnavailable: 0}
+  selector:
+    matchLabels: {app: "{{ .Release.Name }}-api"}
+  template:
+    metadata:
+      labels: {app: "{{ .Release.Name }}-api"}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/config.yaml") . | sha256sum }}
+    spec:
+      terminationGracePeriodSeconds: {{ .Values.gracePeriod }}
+      containers:
+      - name: api
+        image: {{ .Values.image }}
+        imagePullPolicy: IfNotPresent
+        env:
+        - {name: UV_NO_CACHE, value: "1"}
+        - name: POD_NAME
+          valueFrom: {fieldRef: {fieldPath: metadata.name}}
+        ports:
+        - {name: http, containerPort: 8080}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        startupProbe:
+          httpGet: {path: /startup, port: http}
+          periodSeconds: 2
+          timeoutSeconds: 1
+          failureThreshold: 90
+        readinessProbe:
+          httpGet: {path: /ready, port: http}
+          periodSeconds: 1
+          timeoutSeconds: 1
+          failureThreshold: 1
+        livenessProbe:
+          httpGet: {path: /health, port: http}
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 3
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/app/.venv/bin/python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/drain', timeout=10).read()"]
+        volumeMounts:
+        - {name: config, mountPath: /config, readOnly: true}
+        - {name: config, mountPath: /model, readOnly: true}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {drop: ["ALL"]}
+      volumes:
+      - name: config
+        configMap: {name: {{ include "hw11.configName" . }}}

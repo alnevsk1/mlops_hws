@@ -1,0 +1,12 @@
+*
+!pyproject.toml
+!uv.lock
+!Dockerfile
+!src/
+!src/**
+!scripts/
+!scripts/**
+!artifacts/
+!artifacts/**
+!params.yaml
+**/__pycache__

@@ -1,0 +1,18 @@
+{{- $model := .Files.Get (printf "files/%s.json" .Values.model) -}}
+{{- if not $model }}{{ fail "Unknown model artifact" }}{{ end -}}
+{{- $config := .Files.Get "files/params.yaml" | fromYaml -}}
+{{- $_ := mergeOverwrite $config.backend .Values.backend -}}
+{{- $_ := set $config.backend "artifact" "/model/model.json" -}}
+{{- $_ := set $config.backend "artifact_sha256" (sha256sum $model) -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "hw11.configName" . }}
+  annotations:
+    helm.sh/resource-policy: keep
+immutable: true
+data:
+  params.yaml: |
+{{ toYaml $config | indent 4 }}
+  model.json: |
+{{ $model | indent 4 }}

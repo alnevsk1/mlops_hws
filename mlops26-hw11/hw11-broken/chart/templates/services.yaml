@@ -1,0 +1,16 @@
+{{- range $suffix, $affinity := dict "normal" "None" "sticky" "ClientIP" }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $.Release.Name }}-{{ $suffix }}
+spec:
+  selector: {app: "{{ $.Release.Name }}-api"}
+  sessionAffinity: {{ $affinity }}
+  {{- if eq $affinity "ClientIP" }}
+  sessionAffinityConfig:
+    clientIP: {timeoutSeconds: 10800}
+  {{- end }}
+  ports:
+  - {name: http, port: 8080, targetPort: http}
+{{- end }}

@@ -1,0 +1,31 @@
+{
+  "groups": [
+    {
+      "name": "hw11",
+      "rules": [
+        {
+          "alert": "HighTTFC",
+          "expr": "histogram_quantile(0.95, sum by(le) (rate(hw11_ttfc_seconds_bucket[30s]))) > 1.5 and sum(increase(hw11_ttfc_seconds_count[30s])) >= 10",
+          "for": "15s",
+          "labels": {
+            "severity": "warning"
+          },
+          "annotations": {
+            "summary": "TTFC p95 > 1.5 s with at least 10 completed observations"
+          }
+        },
+        {
+          "alert": "HighRejections",
+          "expr": "sum(rate(hw11_requests_total{outcome=\"rejected\"}[30s])) / sum(rate(hw11_requests_total[30s])) > 0.1 and sum(increase(hw11_requests_total[30s])) >= 10",
+          "for": "15s",
+          "labels": {
+            "severity": "warning"
+          },
+          "annotations": {
+            "summary": "Rejections > 10%, at least 10 terminal observations"
+          }
+        }
+      ]
+    }
+  ]
+}

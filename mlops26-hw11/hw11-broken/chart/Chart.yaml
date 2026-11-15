@@ -1,0 +1,6 @@
+apiVersion: v2
+name: hw11
+description: Controlled CPU streaming API and Kubernetes experiments
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

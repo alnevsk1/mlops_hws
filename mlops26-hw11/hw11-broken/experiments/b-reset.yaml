@@ -1,0 +1,5 @@
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0

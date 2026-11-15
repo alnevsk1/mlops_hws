@@ -1,0 +1,12 @@
+image: mlops-hw11:dev3
+replicas: 2
+gracePeriod: 60
+model: A
+backend: {}
+resources:
+  requests: {cpu: 200m, memory: 96Mi}
+  limits: {cpu: "1", memory: 256Mi}
+hpa:
+  enabled: false
+  targetCPU: 60
+  stabilizationSeconds: 60
