@@ -1,0 +1,2 @@
+2.4G	/var/lib/containerd
+105M	/var/lib/kubelet

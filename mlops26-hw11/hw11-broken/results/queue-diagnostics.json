@@ -1,0 +1,110 @@
+{
+  "B-main-skew-normal-1": {
+    "measurement_samples": 52,
+    "queued_and_other_idle_samples": 18,
+    "queued_and_other_idle_fraction": 0.34615384615384615,
+    "max_waiting_by_pod": {
+      "hw11-api-567c459dc8-8dsbg": 3.0,
+      "hw11-api-567c459dc8-5pbqv": 4.0
+    }
+  },
+  "B-main-skew-normal-2": {
+    "measurement_samples": 48,
+    "queued_and_other_idle_samples": 13,
+    "queued_and_other_idle_fraction": 0.2708333333333333,
+    "max_waiting_by_pod": {
+      "hw11-api-547d6668b4-blrhm": 5.0,
+      "hw11-api-547d6668b4-mh5fx": 2.0
+    }
+  },
+  "B-main-skew-normal-3": {
+    "measurement_samples": 53,
+    "queued_and_other_idle_samples": 10,
+    "queued_and_other_idle_fraction": 0.18867924528301888,
+    "max_waiting_by_pod": {
+      "hw11-api-778588945b-lrk9w": 2.0,
+      "hw11-api-778588945b-57c7z": 2.0
+    }
+  },
+  "B-main-skew-sticky-1": {
+    "measurement_samples": 47,
+    "queued_and_other_idle_samples": 37,
+    "queued_and_other_idle_fraction": 0.7872340425531915,
+    "max_waiting_by_pod": {
+      "hw11-api-78cf87f8bb-9wchr": 0,
+      "hw11-api-78cf87f8bb-nbmmk": 12.0
+    }
+  },
+  "B-main-skew-sticky-2": {
+    "measurement_samples": 47,
+    "queued_and_other_idle_samples": 42,
+    "queued_and_other_idle_fraction": 0.8936170212765957,
+    "max_waiting_by_pod": {
+      "hw11-api-7bf4b447c8-kblg9": 12.0,
+      "hw11-api-7bf4b447c8-chn54": 0
+    }
+  },
+  "B-main-skew-sticky-3": {
+    "measurement_samples": 53,
+    "queued_and_other_idle_samples": 46,
+    "queued_and_other_idle_fraction": 0.8679245283018868,
+    "max_waiting_by_pod": {
+      "hw11-api-5984b8ff44-d2fvh": 12.0,
+      "hw11-api-5984b8ff44-hj9xr": 0
+    }
+  },
+  "B-main-uniform-normal-1": {
+    "measurement_samples": 47,
+    "queued_and_other_idle_samples": 12,
+    "queued_and_other_idle_fraction": 0.2553191489361702,
+    "max_waiting_by_pod": {
+      "hw11-api-7f74f674db-9sznj": 3.0,
+      "hw11-api-7f74f674db-cfplh": 1.0
+    }
+  },
+  "B-main-uniform-normal-2": {
+    "measurement_samples": 47,
+    "queued_and_other_idle_samples": 24,
+    "queued_and_other_idle_fraction": 0.5106382978723404,
+    "max_waiting_by_pod": {
+      "hw11-api-8675b96999-hcfmh": 4.0,
+      "hw11-api-8675b96999-zfwwg": 3.0
+    }
+  },
+  "B-main-uniform-normal-3": {
+    "measurement_samples": 53,
+    "queued_and_other_idle_samples": 9,
+    "queued_and_other_idle_fraction": 0.16981132075471697,
+    "max_waiting_by_pod": {
+      "hw11-api-c86c8f59f-tstgq": 4.0,
+      "hw11-api-c86c8f59f-k4767": 1.0
+    }
+  },
+  "B-main-uniform-sticky-1": {
+    "measurement_samples": 47,
+    "queued_and_other_idle_samples": 0,
+    "queued_and_other_idle_fraction": 0.0,
+    "max_waiting_by_pod": {
+      "hw11-api-7d8c6ccc98-vm86k": 0,
+      "hw11-api-7d8c6ccc98-zwrtd": 1.0
+    }
+  },
+  "B-main-uniform-sticky-2": {
+    "measurement_samples": 47,
+    "queued_and_other_idle_samples": 2,
+    "queued_and_other_idle_fraction": 0.0425531914893617,
+    "max_waiting_by_pod": {
+      "hw11-api-6b6c74f968-swdbs": 1.0,
+      "hw11-api-6b6c74f968-5tchh": 2.0
+    }
+  },
+  "B-main-uniform-sticky-3": {
+    "measurement_samples": 52,
+    "queued_and_other_idle_samples": 0,
+    "queued_and_other_idle_fraction": 0.0,
+    "max_waiting_by_pod": {
+      "hw11-api-664c957569-ddrnz": 0,
+      "hw11-api-664c957569-zrzjv": 0
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "C-hpa": {
+    "current_three_after_load_s": 37.84930777549744,
+    "back_two_after_last_send_s": 105.32356715202332,
+    "observation_note": "HPA times are first observed samples; Pod times use Kubernetes timestamps.",
+    "pods": {
+      "hw11-api-7474d75746-zxcj2": {
+        "initial": true,
+        "created_after_load_s": -267.71934509277344,
+        "ready_after_load_s": null,
+        "requests": 0,
+        "first_request_after_load_s": null
+      },
+      "hw11-api-8ffd54784-d25h2": {
+        "initial": true,
+        "created_after_load_s": -56.71934509277344,
+        "ready_after_load_s": -22.719345092773438,
+        "creation_to_ready_s": 34.0,
+        "requests": 363,
+        "first_request_after_load_s": 0.6075448989868164
+      },
+      "hw11-api-8ffd54784-ffp67": {
+        "initial": true,
+        "created_after_load_s": -52.71934509277344,
+        "ready_after_load_s": -21.719345092773438,
+        "creation_to_ready_s": 31.0,
+        "requests": 342,
+        "first_request_after_load_s": 0.0
+      },
+      "hw11-api-8ffd54784-v6fmv": {
+        "initial": false,
+        "created_after_load_s": 23.280654907226562,
+        "ready_after_load_s": 55.28065490722656,
+        "creation_to_ready_s": 32.0,
+        "requests": 195,
+        "first_request_after_load_s": 56.78992676734924
+      }
+    }
+  },
+  "C-hpa-sticky": {
+    "current_three_after_load_s": 47.78135347366333,
+    "back_two_after_last_send_s": 92.66302967071533,
+    "observation_note": "HPA times are first observed samples; Pod times use Kubernetes timestamps.",
+    "pods": {
+      "hw11-api-8ffd54784-d25h2": {
+        "initial": true,
+        "created_after_load_s": -364.92481231689453,
+        "ready_after_load_s": -330.92481231689453,
+        "creation_to_ready_s": 34.0,
+        "requests": 60,
+        "first_request_after_load_s": 3.6044883728027344
+      },
+      "hw11-api-8ffd54784-ffp67": {
+        "initial": true,
+        "created_after_load_s": -360.92481231689453,
+        "ready_after_load_s": -329.92481231689453,
+        "creation_to_ready_s": 31.0,
+        "requests": 840,
+        "first_request_after_load_s": 0.0
+      },
+      "hw11-api-8ffd54784-lrr6n": {
+        "initial": false,
+        "created_after_load_s": 31.07518768310547,
+        "ready_after_load_s": 58.07518768310547,
+        "creation_to_ready_s": 27.0,
+        "requests": 0,
+        "first_request_after_load_s": null
+      }
+    }
+  }
+}

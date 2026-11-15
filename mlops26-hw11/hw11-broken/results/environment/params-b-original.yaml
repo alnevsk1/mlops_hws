@@ -1,0 +1,34 @@
+backend:
+  mode: simulated
+  artifact: artifacts/A.json
+  artifact_sha256: 490eeb043a9b314e8fd02352c1bb569f5bb33c16bfab417b280c21c61690996f
+  warmup_seconds: 20
+  never_ready: false
+  early_ready: false
+  max_running: 1
+  max_waiting: 12
+  queue_timeout_seconds: 15
+  cache_entries: 16
+  hit_cpu_seconds: 0.025
+  miss_cpu_seconds: 0.20
+  chunk_cpu_seconds: 0.003
+  chunk_delay_seconds: 0.12
+api:
+  host: 0.0.0.0
+  port: 8080
+  max_prompt_chars: 4096
+  max_chunks: 120
+  default_chunks: 8
+  graceful_timeout_seconds: 45
+  drain_seconds: 5
+metrics:
+  buckets: [0.025, 0.05, 0.1, 0.2, 0.4, 0.8, 1.5, 3, 5, 8, 12, 20, 30, 60]
+load:
+  seed: 42
+  duration_seconds: 120
+  rate: 1.3
+  timeout_seconds: 35
+  chunks: 8
+  clients: 4
+  repeats: 3
+  start_delay_seconds: 15

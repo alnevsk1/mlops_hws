@@ -1,0 +1,9 @@
+{
+  "utc": 1794775945.6902215,
+  "host_free_bytes": 81103077376,
+  "host_free_delta_bytes": 4971905024,
+  "delta_scope": "Whole host drive; approximate upper-level comparison, includes unrelated host activity.",
+  "results_bytes": 99645274,
+  "api_image_reported_mb": 284,
+  "kind_node_image_reported_gb": 1.35
+}

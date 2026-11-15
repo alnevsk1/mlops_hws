@@ -1,0 +1,167 @@
+{
+  "HighTTFC": [
+    {
+      "run": "B-main-skew-normal-1",
+      "pending_utc": 1794756540.8786075,
+      "firing_utc": 1794756556.9896636,
+      "normal_utc": 1794756566.382269,
+      "observed_hold_s": 16.111056089401245
+    },
+    {
+      "run": "B-main-skew-normal-2",
+      "pending_utc": 1794757381.3313878,
+      "firing_utc": 1794757395.767989,
+      "normal_utc": 1794757513.2825348,
+      "observed_hold_s": 14.436601161956787
+    },
+    {
+      "run": "B-main-skew-normal-3",
+      "pending_utc": 1794758217.769675,
+      "firing_utc": 1794758233.1911302,
+      "normal_utc": 1794758237.6104786,
+      "observed_hold_s": 15.421455144882202
+    },
+    {
+      "run": "B-main-skew-sticky-1",
+      "pending_utc": 1794756322.806119,
+      "firing_utc": 1794756337.3392384,
+      "normal_utc": 1794756461.5659425,
+      "observed_hold_s": 14.533119440078735
+    },
+    {
+      "run": "B-main-skew-sticky-3",
+      "pending_utc": 1794758011.7991712,
+      "firing_utc": 1794758027.7868,
+      "normal_utc": 1794758148.0184054,
+      "observed_hold_s": 15.987628698348999
+    },
+    {
+      "run": "B-main-uniform-normal-1",
+      "pending_utc": 1794756105.2228012,
+      "firing_utc": 1794756122.2510073,
+      "normal_utc": 1794756201.4663146,
+      "observed_hold_s": 17.02820611000061
+    },
+    {
+      "run": "B-main-uniform-normal-2",
+      "pending_utc": 1794756951.3926466,
+      "firing_utc": 1794756967.3571937,
+      "normal_utc": 1794757081.5572069,
+      "observed_hold_s": 15.964547157287598
+    },
+    {
+      "run": "B-main-uniform-normal-3",
+      "pending_utc": 1794757797.6233368,
+      "firing_utc": 1794757813.0973315,
+      "normal_utc": 1794757912.8838358,
+      "observed_hold_s": 15.473994731903076
+    },
+    {
+      "run": "B-main-uniform-sticky-2",
+      "pending_utc": 1794756736.5503688,
+      "firing_utc": 1794756751.4379694,
+      "normal_utc": 1794756761.6811118,
+      "observed_hold_s": 14.887600660324097
+    },
+    {
+      "run": "B-skew-sticky-1",
+      "pending_utc": 1794755652.4939897,
+      "firing_utc": 1794755667.464313,
+      "normal_utc": 1794755791.8194814,
+      "observed_hold_s": 14.970323324203491
+    },
+    {
+      "run": "B-uniform-normal-1",
+      "pending_utc": 1794755456.5807061,
+      "firing_utc": 1794755473.169179,
+      "normal_utc": 1794755537.8680415,
+      "observed_hold_s": 16.588472843170166
+    },
+    {
+      "run": "C-hpa",
+      "pending_utc": 1794775477.839704,
+      "firing_utc": 1794775491.62204,
+      "normal_utc": 1794775676.3522246,
+      "observed_hold_s": 13.782335996627808
+    },
+    {
+      "run": "C-hpa-sticky",
+      "pending_utc": 1794775787.1978388,
+      "firing_utc": 1794775802.3325703,
+      "normal_utc": 1794775986.0395648,
+      "observed_hold_s": 15.134731531143188
+    },
+    {
+      "run": "metrics-refined-buckets",
+      "pending_utc": 1794776152.2381763,
+      "firing_utc": 1794776166.2048273,
+      "normal_utc": 1794776287.054141,
+      "observed_hold_s": 13.96665096282959
+    }
+  ],
+  "HighRejections": [
+    {
+      "run": "A-forced-failure",
+      "pending_utc": 1794775342.8011522,
+      "firing_utc": 1794775357.820323,
+      "normal_utc": 1794775378.023608,
+      "observed_hold_s": 15.019170761108398
+    },
+    {
+      "run": "A-warmup-broken",
+      "pending_utc": 1794774227.68933,
+      "firing_utc": 1794774242.6767697,
+      "normal_utc": 1794774267.8840308,
+      "observed_hold_s": 14.987439632415771
+    },
+    {
+      "run": "B-main-skew-sticky-1",
+      "pending_utc": 1794756348.2326198,
+      "firing_utc": 1794756362.3249938,
+      "normal_utc": 1794756452.6441362,
+      "observed_hold_s": 14.092374086380005
+    },
+    {
+      "run": "B-main-skew-sticky-2",
+      "pending_utc": 1794757191.9913273,
+      "firing_utc": 1794757207.0806909,
+      "normal_utc": 1794757296.1549613,
+      "observed_hold_s": 15.08936357498169
+    },
+    {
+      "run": "B-main-skew-sticky-3",
+      "pending_utc": 1794758032.1811426,
+      "firing_utc": 1794758047.6736152,
+      "normal_utc": 1794758137.042471,
+      "observed_hold_s": 15.492472648620605
+    },
+    {
+      "run": "B-skew-sticky-1",
+      "pending_utc": 1794755667.464313,
+      "firing_utc": 1794755681.2830226,
+      "normal_utc": 1794755787.356523,
+      "observed_hold_s": 13.8187096118927
+    },
+    {
+      "run": "C-hpa",
+      "pending_utc": 1794775485.281759,
+      "firing_utc": 1794775502.322311,
+      "normal_utc": 1794775552.5624115,
+      "observed_hold_s": 17.040551900863647
+    },
+    {
+      "run": "C-hpa-sticky",
+      "pending_utc": 1794775787.1978388,
+      "firing_utc": 1794775802.3325703,
+      "normal_utc": 1794775986.0395648,
+      "observed_hold_s": 15.134731531143188
+    },
+    {
+      "run": "metrics-refined-buckets",
+      "pending_utc": 1794776187.276633,
+      "firing_utc": 1794776201.3998423,
+      "normal_utc": 1794776278.1791754,
+      "observed_hold_s": 14.123209238052368
+    }
+  ]
+}

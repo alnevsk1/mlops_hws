@@ -1,0 +1,19 @@
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Sun Nov 15 23:35:31 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 18
+DESCRIPTION: Upgrade complete
+TEST SUITE: None
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Sun Nov 15 23:37:00 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 19
+DESCRIPTION: Upgrade complete
+TEST SUITE: None
+level=WARN msg="resource exists on cluster but not in original release, using cluster state as baseline" namespace=hw11 name=hw11-config-70998fb04687 kind=ConfigMap
+Rollback was a success! Happy Helming!
+{"planned": 90, "sent": 90, "exit_codes": [0, 0, 0, 0], "outcomes": {"completed": 90, "rejected": 0, "aborted": 0, "timeout": 0}}

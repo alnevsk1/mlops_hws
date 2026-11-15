@@ -1,0 +1,13 @@
+mlops-hw11:dev3 284MB
+mlops-hw11:dev2 284MB
+mlops-hw11:dev1 284MB
+mlops-hw6-mlflow:latest 1.28GB
+postgres:16-alpine 419MB
+python:3.12-slim 177MB
+mariadb:11.8 462MB
+pkpofficial/ojs:stable-3_5_0 2.3GB
+alpine:latest 12.9MB
+final_project-frontend:latest 93.4MB
+final_project-backend:latest 389MB
+postgres:15-alpine 392MB
+kindest/node:<none> 1.35GB

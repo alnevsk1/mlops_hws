@@ -1,0 +1,81 @@
+[
+    {
+        "Id": "sha256:04a67f97e372f019b85c95ce8d08c9a24b545c8e6cec6d5f93cb781b3cfd4e32",
+        "RepoTags": [
+            "mlops-hw11:dev3"
+        ],
+        "RepoDigests": [
+            "mlops-hw11@sha256:04a67f97e372f019b85c95ce8d08c9a24b545c8e6cec6d5f93cb781b3cfd4e32"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-15T14:58:44.260325002Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 71902064,
+        "GraphDriver": {
+            "Data": null,
+            "Name": "overlayfs"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:34467cc93912af891dfee8a3902adf9b4f355a9bca4eaa46f658d1181a21de0d",
+                "sha256:16df0073c13c96653ee2b601b16e514321513eb4af983de156c2d4e17df8a5d9",
+                "sha256:9639007baab8a136bc468bd5d757fdf79cf5d77b6ff2a87889071252e334fab3",
+                "sha256:abca6d63c9dbe51fa3bc42e75e0387da12803ef64430ad151814e468d5e1c203",
+                "sha256:467c8e5316bbdfa4fd2b1eaffbf62e96f4cb98b5086ca22f6422e612a3d148ec",
+                "sha256:e359fb3c765caff4e6f0e8917504efabc9a875bdf9a4aafd767f995bf454c0e9",
+                "sha256:32446daa62a32fcc8814beca9113103048cb579b3edcd08b05e8d85aab7881b9",
+                "sha256:08078b8451f7fc4a32ff758bbfc06c3e0ddf6e13430c78f28d7d07dbbe32d60e",
+                "sha256:a3ca447e53538d32bb4a13240436cc4097bb7f55b902dd29f3b143cf54be7e97",
+                "sha256:940635c492ab981f8340365947c2a4c5e7720ea76576175bc6d0601d9da0d4f9",
+                "sha256:3660b98ae5aa870f300c6d39b50407c633761bef3c82c160fc17a83bd8fe83c0",
+                "sha256:af9bd0833b9ad93a47cd154fe1ad868fc580dd598d85b2b4d5c40a4572ea9755"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-15T14:58:47.286851874Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:04a67f97e372f019b85c95ce8d08c9a24b545c8e6cec6d5f93cb781b3cfd4e32",
+            "size": 856
+        },
+        "Config": {
+            "ArgsEscaped": true,
+            "Cmd": [
+                "uv",
+                "run",
+                "--no-sync",
+                "python",
+                "-m",
+                "src.service",
+                "--config",
+                "/config/params.yaml"
+            ],
+            "Entrypoint": null,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.14",
+                "PYTHON_SHA256=5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a",
+                "UV_PYTHON_DOWNLOADS=never",
+                "UV_LINK_MODE=copy",
+                "PYTHONUNBUFFERED=1",
+                "PYTHONUTF8=1"
+            ],
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Labels": null,
+            "OnBuild": null,
+            "User": "10001:10001",
+            "Volumes": null,
+            "WorkingDir": "/app"
+        }
+    }
+]

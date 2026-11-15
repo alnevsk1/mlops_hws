@@ -1,0 +1,2 @@
+uv run --no-sync python -m scripts.check_evidence
+Evidence checks passed: matrix, warmup, rollout, rollback, recovery, failure, HPA, alerts, figures

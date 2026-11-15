@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-15",
+  "stage": "Before creating the HW11 kind cluster",
+  "source": "Read-only command outputs recorded in the chat; exact timestamp was not saved",
+  "commands": [
+    "Get-PSDrive C | Format-List Used,Free",
+    "docker info --format 'Server={{.ServerVersion}} CPUs={{.NCPU}} Memory={{.MemTotal}}'",
+    "docker system df"
+  ],
+  "host_drive_free_bytes": 86074982400,
+  "docker_cpus": 4,
+  "docker_memory_bytes": 8308117504,
+  "docker_version": "28.5.1",
+  "existing_docker_images_gb": 9.435,
+  "existing_docker_volumes_mb": 906.9,
+  "existing_build_cache_gb": 3.159,
+  "planned_additional_disk_budget_gib": 15,
+  "planned_workload_memory_budget_gib": 6
+}

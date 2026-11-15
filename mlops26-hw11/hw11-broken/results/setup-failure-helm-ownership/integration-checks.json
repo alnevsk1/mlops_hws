@@ -1,0 +1,37 @@
+[
+  {
+    "scenario": "warmup",
+    "exit_code": 1,
+    "finished_utc": 1794758370.6001163
+  },
+  {
+    "scenario": "rollout",
+    "exit_code": 1,
+    "finished_utc": 1794758372.333616
+  },
+  {
+    "scenario": "rollback",
+    "exit_code": 1,
+    "finished_utc": 1794758373.9504018
+  },
+  {
+    "scenario": "recovery",
+    "exit_code": 1,
+    "finished_utc": 1794758375.551427
+  },
+  {
+    "scenario": "failure",
+    "exit_code": 1,
+    "finished_utc": 1794758376.9680188
+  },
+  {
+    "scenario": "hpa",
+    "exit_code": 1,
+    "finished_utc": 1794758378.7131858
+  },
+  {
+    "scenario": "hpa-sticky",
+    "exit_code": 1,
+    "finished_utc": 1794758381.028565
+  }
+]

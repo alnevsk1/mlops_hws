@@ -1,0 +1,16 @@
+{
+  "planned": 180,
+  "sent": 180,
+  "exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "outcomes": {
+    "completed": 149,
+    "rejected": 31,
+    "aborted": 0,
+    "timeout": 0
+  }
+}

@@ -1,0 +1,20 @@
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Sun Nov 15 23:43:23 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 23
+DESCRIPTION: Upgrade complete
+TEST SUITE: None
+{"planned": 900, "sent": 900, "exit_codes": [0, 0, 0, 0], "outcomes": {"completed": 777, "rejected": 123, "aborted": 0, "timeout": 0}}
+NAME                          CPU(cores)   MEMORY(bytes)   
+client-0                      0m           8Mi             
+client-1                      0m           8Mi             
+client-2                      0m           10Mi            
+client-3                      0m           12Mi            
+grafana-7b55fb75dd-qtgxf      6m           159Mi           
+hw11-api-8ffd54784-d25h2      5m           45Mi            
+hw11-api-8ffd54784-ffp67      4m           45Mi            
+kube-state-9c599888d-mfd5l    5m           11Mi            
+prometheus-55654c4f6b-vm9k6   38m          79Mi            
+{"planned": 900, "sent": 900, "exit_codes": [0, 0, 0, 0], "outcomes": {"completed": 777, "rejected": 123, "aborted": 0, "timeout": 0}}

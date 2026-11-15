@@ -1,0 +1,8 @@
+{
+  "evidence": "passed",
+  "unit_tests": 9,
+  "integration_scenarios": 7,
+  "matrix_runs": 12,
+  "finished_utc": 1794776313.7066875,
+  "code_commit": "9f7309c3837587867c021e29536be8b19e83d244"
+}

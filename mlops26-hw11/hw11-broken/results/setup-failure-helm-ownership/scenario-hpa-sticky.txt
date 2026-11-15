@@ -1,0 +1,14 @@
+level=WARN msg="upgrade failed" name=hw11 error="conflict occurred while applying object hw11/hw11-api apps/v1, Kind=Deployment: Apply failed with 1 conflict: conflict with \"kubectl-patch\" using apps/v1: .spec.strategy.rollingUpdate.maxSurge"
+Error: UPGRADE FAILED: conflict occurred while applying object hw11/hw11-api apps/v1, Kind=Deployment: Apply failed with 1 conflict: conflict with "kubectl-patch" using apps/v1: .spec.strategy.rollingUpdate.maxSurge
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw11\hw11-broken\scripts\scenario_c.py", line 77, in <module>
+    main()
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw11\hw11-broken\scripts\scenario_c.py", line 20, in main
+    upgrade(
+  File "C:\Users\alnevski\Documents\7sem\mlops26\mlops26-hw11\hw11-broken\scripts\scenarios_a.py", line 43, in upgrade
+    subprocess.run(cmd, cwd=ROOT, check=True)
+  File "C:\Users\alnevski\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['helm', 'upgrade', 'hw11', 'chart', '--kube-context', 'kind-mlops-hw11', '-n', 'hw11', '--reset-values', '--set', 'model=A', '--set-json', 'hpa.enabled=true', '--set-json', 'backend.hit_cpu_seconds=0.3', '--set-json', 'backend.miss_cpu_seconds=0.4', '--set-json', 'backend.chunk_cpu_seconds=0.01', '--set-json', 'backend.chunk_delay_seconds=0.02', '--wait', '--timeout', '180s']' returned non-zero exit status 1.

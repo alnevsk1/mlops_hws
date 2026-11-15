@@ -1,0 +1,7 @@
+{
+  "python": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+  "uv_lock_sha256": "185900c3ee8668ae12eaf22040431116a574dd3a89bd141cf80f1d97b7d0b99b",
+  "service_sha256": "0bbea2b55d59a81eeda8410f0e67bbaa6f90b871fa04297ddb5d24f946d6ab36",
+  "loadgen_sha256": "f7d2bff55cc417bac2396f96cd3da93ee9249692c900a65c9022adca41768de8",
+  "git_base": "46bb5e1c5b3d2bd262407a0090039ebc006aea07"
+}
